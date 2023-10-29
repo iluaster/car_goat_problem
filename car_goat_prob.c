@@ -35,26 +35,13 @@ int main(int argc, char *argv[])
 		}
 		guess=rand()%3;
 		if(guess == 0) // player guess the door.
-		{
-			if(door[0] == true)
-				lost++;// because you always change the initial door
-			else
-				win++;//because you alwasy change the initial door,you will get car.
-		}
+			door[0] == true ? lost++:win++;
+				//lost++; because you always change the initial door
+				//win++;  because you alwasy change the initial door,you will get car.
 		if(guess == 1)
-		{
-			if(door[1] == true)
-				lost++;// because you always change the initial door
-			else
-				win++;//because you alwasy change the initial door, you will get car
-		}
+			door[1] == true ? lost++:win++;
 		if(guess == 2)
-		{
-			if(door[2] == true)
-				lost++;// because you always change the initial door
-			else
-				win++;//because you alwasy change the initial door,you will get car.
-		}
+			door[2] == true ? lost++:win++;
 	}
 	printf("%d games. \n",race_count);
 	printf("Win %d \n",win);
